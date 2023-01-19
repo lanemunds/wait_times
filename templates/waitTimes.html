@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {%block content%}
+<div>
+  {%for datas in data%} {{datas['name']}} {%endfor%} {%for r in adventure%}
+  {{r}} {%endfor%}
+</div>
+
+{%endblock content%}
