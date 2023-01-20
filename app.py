@@ -9,18 +9,66 @@ app = Flask(__name__)
 app.secret_key = 'dev'
 app.jinja_env.undefined = StrictUndefined
 
-@app.route("/hello")
+@app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return render_template('home.html')
 
-@app.route("/", )
+@app.route("/waitTimes", )
 def get_times():
     req = requests.get("https://queue-times.com/en-US/parks/16/queue_times.json")
-    print(req.content)
     data = json.loads(req.content)
-    adventure =  data['rides']
+    return render_template('waitTimes.html', data = data['lands'])
 
-    return render_template('waitTimes.html', data = data['lands'], adventure = adventure)
+@app.route("/californiaWaitTimes")
+def get_cal_times():
+    req = requests.get("https://queue-times.com/en-US/parks/17/queue_times.json")
+    data = json.loads(req.content)
+    return render_template('californiaWaitTimes.html', data = data['lands'])
+
+@app.route("/hollywoodStudiosWaitTimes")
+def get_hollywood_times():
+    req = requests.get("https://queue-times.com/en-US/parks/7/queue_times.json")
+    data = json.loads(req.content)
+    return render_template('hollywoodStudiosWaitTimes.html', data = data['lands'])
+
+@app.route("/magicKingdomWaitTimes")
+def get_MK_times():
+    req = requests.get("https://queue-times.com/en-US/parks/6/queue_times.json")
+    data = json.loads(req.content)
+    return render_template('magicKingdomWaitTimes.html', data = data['lands'])
+
+@app.route("/epcotWaitTimes")
+def get_epcot_times():
+    req = requests.get("https://queue-times.com/en-US/parks/5/queue_times.json")
+    data = json.loads(req.content)
+    return render_template('epcotWaitTimes.html', data = data['lands'])
+
+@app.route("/animalKingdomWaitTimes")
+def get_AK_times():
+    req = requests.get("https://queue-times.com/en-US/parks/8/queue_times.json")
+    data = json.loads(req.content)
+    return render_template('animalKingdomWaitTimes.html', data = data['lands'])
+
+@app.route('/parks')
+def parks():
+    return render_template('parks.html')
+
+@app.route('/californiaAdventure')
+def dca():
+    return render_template('californiaAdventure.html')
+
+@app.route('/disneyland')
+def disneyland():
+    req = requests.get('https://queue-times.com/en-US/parks/16/queue_times.json')
+    data = json.loads(req.content) 
+    print(data)
+    return render_template('disneyland.html', data = data['lands'])
+
+@app.route('/lands/<id>')
+def spec_land(id):
+    req = requests.get('https://queue-times.com/en-US/parks/16/queue_times.json')
+    data = json.loads(req.content)
+    return render_template('lands.html', data= data['lands'])
 
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
-{% extends 'base.html' %} {%block content%}
-<h1>Current Disneyland Wait Times</h1>
+{%extends 'base.html'%} {%block content%}
+<h1>Current California Adventure Wait Times</h1>
 <section>
   {%for datas in data%}
   <h2>{{datas['name']}}</h2>
@@ -19,5 +19,4 @@
     <a href="https://queue-times.com/en-US" target="_blank">Queue-Times.com</a>
   </h2>
 </footer>
-
 {%endblock content%}
