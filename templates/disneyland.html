@@ -7,6 +7,6 @@
 {%endfor%}
 
 <h2>Rides</h2>
-{%for r in data%}
-<div>{{r['name']}}</div>
-{%endfor%} {%endblock content%}
+{%for r in data%} {%for ride in r['rides']%}
+<div>{{ride['name']}}</div>
+{%endfor%} {%endfor%} {%endblock content%}

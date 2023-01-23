@@ -1,3 +1,11 @@
 {%extends 'base.html'%} {%block content%}
 <h1>Welcome to Lane's California Adventure page</h1>
-{%endblock content%}
+<h2>Lands</h2>
+{%for r in data%}
+<div>{{r['name']}}</div>
+{%endfor%}
+
+<h2>Rides</h2>
+{%for r in data%} {%for ride in r['rides']%}
+<div>{{ride['name']}}</div>
+{%endfor%} {%endfor%} {%endblock content%}

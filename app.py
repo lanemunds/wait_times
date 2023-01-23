@@ -55,7 +55,9 @@ def parks():
 
 @app.route('/californiaAdventure')
 def dca():
-    return render_template('californiaAdventure.html')
+    req = requests.get("https://queue-times.com/en-US/parks/17/queue_times.json")
+    data = json.loads(req.content)
+    return render_template('californiaAdventure.html', data = data['lands'])
 
 @app.route('/disneyland')
 def disneyland():
