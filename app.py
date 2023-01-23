@@ -71,6 +71,13 @@ def spec_land(id):
     req = requests.get('https://queue-times.com/en-US/parks/16/queue_times.json')
     data = json.loads(req.content)
     return render_template('lands.html', data= data['lands'])
+@app.route('/food')
+def food():
+    return render_template('food.html')
+
+@app.route('/users')
+def users():
+    return render_template('users.html')
 
 
 if __name__ == '__main__':
