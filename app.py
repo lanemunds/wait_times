@@ -17,37 +17,43 @@ def hello_world():
 def get_times():
     req = requests.get("https://queue-times.com/en-US/parks/16/queue_times.json")
     data = json.loads(req.content)
-    return render_template('waitTimes.html', data = data['lands'])
+    park = "Disneyland"
+    return render_template('waitTimes.html', data = data['lands'], park = park)
 
 @app.route("/californiaWaitTimes")
 def get_cal_times():
     req = requests.get("https://queue-times.com/en-US/parks/17/queue_times.json")
     data = json.loads(req.content)
-    return render_template('californiaWaitTimes.html', data = data['lands'])
+    park = "California Adventure"
+    return render_template('waitTimes.html', data = data['lands'], park = park)
 
 @app.route("/hollywoodStudiosWaitTimes")
 def get_hollywood_times():
     req = requests.get("https://queue-times.com/en-US/parks/7/queue_times.json")
     data = json.loads(req.content)
-    return render_template('hollywoodStudiosWaitTimes.html', data = data['lands'])
+    park = "Hollywood Studios"
+    return render_template('waitTimes.html', data = data['lands'], park = park)
 
 @app.route("/magicKingdomWaitTimes")
 def get_MK_times():
     req = requests.get("https://queue-times.com/en-US/parks/6/queue_times.json")
     data = json.loads(req.content)
-    return render_template('magicKingdomWaitTimes.html', data = data['lands'])
+    park = "Magic Kingdom"
+    return render_template('waitTimes.html', data = data['lands'], park = park)
 
 @app.route("/epcotWaitTimes")
 def get_epcot_times():
     req = requests.get("https://queue-times.com/en-US/parks/5/queue_times.json")
     data = json.loads(req.content)
-    return render_template('epcotWaitTimes.html', data = data['lands'])
+    park = 'Epcot Center'
+    return render_template('waitTimes.html', data = data['lands'], park = park)
 
 @app.route("/animalKingdomWaitTimes")
 def get_AK_times():
     req = requests.get("https://queue-times.com/en-US/parks/8/queue_times.json")
     data = json.loads(req.content)
-    return render_template('animalKingdomWaitTimes.html', data = data['lands'])
+    park = "Animal Kingdom"
+    return render_template('waitTimes.html', data = data['lands'], park = park)
 
 @app.route('/parks')
 def parks():

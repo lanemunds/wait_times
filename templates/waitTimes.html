@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {%block content%}
-<h1>Current Disneyland Wait Times</h1>
+<h1>Current {{park}} Wait Times</h1>
 <section>
   {%for datas in data%}
   <h2>{{datas['name']}}</h2>
