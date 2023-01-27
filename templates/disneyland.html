@@ -1,6 +1,48 @@
 {%extends 'base.html'%} {%block content%}
-<h1>Disneyland</h1>
-<h2>Rides</h2>
-<h2>Restaurants</h2>
-<h2>Shows</h2>
+<h1>Welcome to Disneyland</h1>
+<div class="container">
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <div class="card">
+          <img
+            src="../static/pictures/skylar-sahakian-1RR5txvZS_I-unsplash.jpg"
+            alt=""
+            class="img-fluid parkPic"
+          />
+          <div class="card-body">
+            <h4>Rides</h4>
+            <a class="btn btn-primary" href="/disneyland">Go!</a>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="../static/pictures/brie-odom-mabey-BcIYd-SMYwU-unsplash.jpg"
+              alt=""
+              class="img-fluid parkPic"
+            />
+            <div class="card-body">
+              <h4>Food</h4>
+              <a class="btn btn-primary" href="/californiaAdventure">Go!</a>
+            </div>
+          </div>
+        </div>
+      
+      <div class="col-md-4">
+        <div class="card">
+          <img
+            src="../static/pictures/brie-odom-mabey-NFEHLHwgcN0-unsplash.jpg"
+            alt=""
+            class="img-fluid parkPic"
+          />
+          <div class="card-body">
+            <h4>Entertainment</h4>
+            <a class="btn btn-primary" href="/epcot">Go!</a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
 {%endblock content%}
