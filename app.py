@@ -77,13 +77,27 @@ def spec_land(id):
     req = requests.get('https://queue-times.com/en-US/parks/16/queue_times.json')
     data = json.loads(req.content)
     return render_template('lands.html', data= data['lands'])
-@app.route('/food')
-def food():
-    return render_template('food.html')
+
 
 @app.route('/users')
 def users():
     return render_template('users.html')
+
+@app.route('/epcot')
+def epcot():
+    return render_template('epcot.html')
+
+@app.route('/magicKingdom')
+def magic():
+    return render_template('magicKingdom.html')
+
+@app.route('/animalKingdom')
+def animal():
+    return render_template('animal.html')
+
+@app.route('/hollywoodStudios')
+def hollywood():
+    return render_template('hollywood.html')
 
 
 if __name__ == '__main__':
