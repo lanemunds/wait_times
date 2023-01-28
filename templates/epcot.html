@@ -1,6 +1,48 @@
 {%extends 'base.html'%} {%block content%}
-<h1>Epcot</h1>
-<h2>Rides</h2>
-<h2>Restaurants</h2>
-<h2>Shows</h2>
+<h1>Welcome to California Adventure</h1>
+<div class="container">
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <div class="card">
+          <img
+            src="../static/pictures/megann-eichner-6dYCuPKXDz4-unsplash.jpg"
+            alt=""
+            class="img-fluid parkPic"
+          />
+          <div class="card-body">
+            <h4>Rides</h4>
+            <a class="btn btn-primary" href="/disneyland">Go!</a>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-4">
+          <div class="card">
+            <img
+              src="../static/pictures/rod-long-Y0DCYvMynV8-unsplash.jpg"
+              alt=""
+              class="img-fluid parkPic"
+            />
+            <div class="card-body">
+              <h4>Food</h4>
+              <a class="btn btn-primary" href="/californiaAdventure">Go!</a>
+            </div>
+          </div>
+        </div>
+      
+      <div class="col-md-4">
+        <div class="card">
+          <img
+            src="../static/pictures/five and dime.jpeg"
+            alt=""
+            class="img-fluid parkPic"
+          />
+          <div class="card-body">
+            <h4>Entertainment</h4>
+            <a class="btn btn-primary" href="/epcot">Go!</a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+    </div>
 {%endblock content%}
