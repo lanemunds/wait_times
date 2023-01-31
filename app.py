@@ -100,5 +100,18 @@ def hollywood():
     return render_template('hollywood.html')
 
 
+@app.route('/disneyrides')
+def disneyRide():
+    return render_template('disneyRides.html')
+
+@app.route('/disneyfood')
+def disneyFood():
+    return render_template('disneyFood.html')
+
+@app.route('/disneyentertainment')
+def disneyEntertainment():
+    return render_template('disneyEntertainment.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
