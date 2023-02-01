@@ -1,3 +1,6 @@
 {%extends 'base.html'%} {%block content%}
 <h1>Welcome to Lane's DisneyLand Rides page</h1>
-{%endblock content%}
+
+{%for r in data%}
+<h2>{{r["name"]}}</h2>
+{%endfor%} {%endblock content%}

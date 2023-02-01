@@ -69,7 +69,6 @@ def dca():
 def disneyland():
     req = requests.get('https://queue-times.com/en-US/parks/16/queue_times.json')
     data = json.loads(req.content) 
-    print(data)
     return render_template('disneyland.html', data = data['lands'])
 
 @app.route('/lands/<id>')
@@ -102,11 +101,16 @@ def hollywood():
 
 @app.route('/disneyrides')
 def disneyRide():
-    return render_template('disneyRides.html')
+    req = requests.get('http://touringplans.com/disneyland/attractions.json')
+    data = json.loads(req.content)
+    return render_template('disneyRides.html', data = data)
 
 @app.route('/disneyfood')
 def disneyFood():
-    return render_template('disneyFood.html')
+    req = requests.get('http://touringplans.com/disneyland/dining.json')
+    data = json.loads(req.content)
+    print(data)
+    return render_template('disneyFood.html', data = data[0])
 
 @app.route('/disneyentertainment')
 def disneyEntertainment():
