@@ -117,6 +117,12 @@ def epcotRide():
     data = json.loads(req.content)
     return render_template('disneyRides.html', data = data, landName = "Epcot")
 
+@app.route('/animalRides')
+def animalRide():
+    req = requests.get('http://touringplans.com/animal-kingdom/attractions.json')
+    data = json.loads(req.content)
+    return render_template('disneyRides.html', data = data, landName = "Animal Kingdom")
+
 @app.route('/disneyfood')
 def disneyFood():
     req = requests.get('http://touringplans.com/disneyland/dining.json')
@@ -136,6 +142,12 @@ def epcotFood():
     req = requests.get('http://touringplans.com/epcot/dining.json')
     data = json.loads(req.content)
     return render_template('disneyFood.html', data = data[0], data2 = data[1], landName = "Epcot")
+
+@app.route('/animalFood')
+def animalFood():
+    req = requests.get('http://touringplans.com/animal-kingdom/dining.json')
+    data = json.loads(req.content)
+    return render_template('disneyFood.html', data = data[0], data2 = data[1], landName = "Animal Kingdom")
 
 @app.route('/disneyentertainment')
 def disneyEntertainment():
