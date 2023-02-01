@@ -103,14 +103,27 @@ def hollywood():
 def disneyRide():
     req = requests.get('http://touringplans.com/disneyland/attractions.json')
     data = json.loads(req.content)
-    return render_template('disneyRides.html', data = data)
+    return render_template('disneyRides.html', data = data, landName = "Disneyland")
+
+@app.route('/californiaRides')
+def californiaRide():
+    req = requests.get('http://touringplans.com/disney-california-adventure/attractions.json')
+    data = json.loads(req.content)
+    return render_template('disneyRides.html', data = data, landName = "California Adventure")
 
 @app.route('/disneyfood')
 def disneyFood():
     req = requests.get('http://touringplans.com/disneyland/dining.json')
     data = json.loads(req.content)
     print(data)
-    return render_template('disneyFood.html', data = data[0])
+    return render_template('disneyFood.html', data = data[0], data2 = data[1], landName = "Disneyland")
+
+@app.route('/californiaFood')
+def californiaFood():
+    req = requests.get('http://touringplans.com/disney-california-adventure/dining.json')
+    data = json.loads(req.content)
+    print(data)
+    return render_template('disneyFood.html', data = data[0], data2 = data[1], landName = "California Adventure")
 
 @app.route('/disneyentertainment')
 def disneyEntertainment():

@@ -1,6 +1,9 @@
 {%extends 'base.html'%} {%block content%}
-<h1>Welcome to Lane's DisneyLand Food page</h1>
+<h1>Welcome to the {{landName}} Food Page</h1>
 {%for r in data%}
+<h2>{{r["name"]}}</h2>
+<p>{{r['summary']}}</p>
+{%endfor%} {%for r in data2%}
 <h2>{{r["name"]}}</h2>
 <p>{{r['summary']}}</p>
 {%endfor%} {%endblock content%}
