@@ -123,6 +123,12 @@ def animalRide():
     data = json.loads(req.content)
     return render_template('disneyRides.html', data = data, landName = "Animal Kingdom")
 
+@app.route('/magicRides')
+def magicRide():
+    req = requests.get('http://touringplans.com/magic-kingdom/attractions.json')
+    data = json.loads(req.content)
+    return render_template('disneyRides.html', data = data, landName = "Magic Kingdom")
+
 @app.route('/disneyfood')
 def disneyFood():
     req = requests.get('http://touringplans.com/disneyland/dining.json')
@@ -148,6 +154,12 @@ def animalFood():
     req = requests.get('http://touringplans.com/animal-kingdom/dining.json')
     data = json.loads(req.content)
     return render_template('disneyFood.html', data = data[0], data2 = data[1], landName = "Animal Kingdom")
+
+@app.route('/magicFood')
+def magicFood():
+    req = requests.get('http://touringplans.com/magic-kingdom/dining.json')
+    data = json.loads(req.content)
+    return render_template('disneyFood.html', data = data[0], data2 = data[1], landName = "Magic Kingdom")
 
 @app.route('/disneyentertainment')
 def disneyEntertainment():
