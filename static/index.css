@@ -1,0 +1,8 @@
+.parkPic{
+    height: 25rem;
+}
+.movies{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

@@ -1,6 +1,11 @@
 {%extends 'base.html'%} {%block content%}
 <h1>Welcome to the {{landName}} Rides page</h1>
 
-{%for r in data%}
-<h2>{{r["name"]}}</h2>
-{%endfor%} {%endblock content%}
+<section class="container movies">
+  {%for r in data%}
+
+  <div class="col-md-3">
+    <h2 class="bg-dark text-white">{{r["name"]}}</h2>
+  </div>
+  {%endfor%} {%endblock content%}
+</section>
