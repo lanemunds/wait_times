@@ -2,7 +2,7 @@
 <h1>Current {{park}} Wait Times</h1>
 <section>
   {%for datas in data%}
-  <h2>{{datas['name']}}</h2>
+  <h2 class="names">{{datas['name']}}</h2>
   {%for r in datas['rides']%}
   <h4>{{r['name']}}</h4>
   {%if r['wait_time'] == 0 and r['is_open'] == True%}

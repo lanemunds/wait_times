@@ -1,8 +1,12 @@
-.parkPic{
-    height: 25rem;
+.parkPic {
+    height: 20rem;
 }
-.movies{
+.movies {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+h2 {
+    border: 2px solid black;
+    text-align: center;
 }
