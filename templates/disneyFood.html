@@ -1,9 +1,14 @@
 {%extends 'base.html'%} {%block content%}
-<h1>Welcome to the {{landName}} Food Page</h1>
-{%for r in data%}
-<h2>{{r["name"]}}</h2>
-<p>{{r['summary']}}</p>
-{%endfor%} {%for r in data2%}
-<h2>{{r["name"]}}</h2>
-<p>{{r['summary']}}</p>
+<h1 class="text-center">Welcome to the {{landName}} Food Page</h1>
+<div class="text-center">
+  <h2 class="btn btn-secondary text-center">Quick Service</h2>
+  {%for r in data%}
+  <h2 class="bg-dark text-white">{{r["name"]}}</h2>
+  <p>{{r['summary']}}</p>
+  {%endfor%}
+  <h2 class="btn btn-secondary text-center text-white">Sit Down</h2>
+  {%for r in data2%}
+  <h2 class="bg-dark text-white text-center">{{r["name"]}}</h2>
+  <p>{{r['summary']}}</p>
+</div>
 {%endfor%} {%endblock content%}

@@ -1,16 +1,18 @@
 {% extends 'base.html' %} {%block content%}
-<h1>Current {{park}} Wait Times</h1>
-<section>
-  {%for datas in data%}
-  <h2 class="names">{{datas['name']}}</h2>
-  {%for r in datas['rides']%}
-  <h4>{{r['name']}}</h4>
-  {%if r['wait_time'] == 0 and r['is_open'] == True%}
-  <h4>No Wait!</h4>
-  {%elif r['is_open'] == True%}
-  <h4>{{r["wait_time"]}} Minutes</h4>
-  {%else%}
-  <h4>{{r['name']}} is currently closed</h4>
+<h1 class="text-center">Current {{park}} Wait Times</h1>
+<section class="container text-center">
+  <div class="text-center">
+    {%for datas in data%}
+    <h2>{{datas['name']}}</h2>
+    {%for r in datas['rides']%}
+    <h4 class="fw-bolder border-bottom">{{r['name']}}</h4>
+    {%if r['wait_time'] == 0 and r['is_open'] == True%}
+    <h4 class="text-info">No Wait!</h4>
+    {%elif r['is_open'] == True%}
+    <h4 class="text-primary">{{r["wait_time"]}} Minutes</h4>
+    {%else%}
+    <h4 class="text-danger">Temporarily Closed</h4>
+  </div>
   {% endif %} {%endfor%} {%endfor%}
 </section>
 <footer>
